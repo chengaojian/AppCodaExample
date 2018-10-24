@@ -9,3 +9,9 @@ Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 - **HelloWord**
 
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/Hello%20World.gif)  
+
+- **StackViewDemo**
+
+![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/StackViewDemo.png)
+
+![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/StackViewDemo.gif)  
