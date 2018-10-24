@@ -10,7 +10,7 @@ Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/HelloWorld.gif)
 
-- **StackViewDemo**
+- **StackView**
 
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/StackViewDemo.png)
 
