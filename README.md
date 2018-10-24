@@ -7,8 +7,8 @@ Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/MyFirstPlayground.png)
 
 - **HelloWord**
+
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/HelloWorld.gif)
-![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/Hello%20World.gif)  
 
 - **StackViewDemo**
 
