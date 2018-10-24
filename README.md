@@ -1,4 +1,5 @@
 # AppCodaExample
+<<<<<<< HEAD
 #### Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 
 ##### 由于最近公司业务调整，工作上没有太多的开发任务，今天准备系统的学习一下Swift，同时记录一下整个过程，以方便后来者参考学习！
@@ -98,3 +99,9 @@ Thank you for choosing **Swift**. This document will help you to start **Swift**
 **HelloWord**
 
 ![Hello World](/Users/mac/Library/Mobile Documents/com~apple~CloudDocs/工作/github/AppCodaExample/gif/Hello World.gif)
+=======
+Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
+由于最近公司业务调整，工作上没有太多的开发任务，今天开始准备系统的学习一下Swift，同时记录一下整个过程，以方便后来者参考学习！
+
+- **HelloWord**
+>>>>>>> 43bb0724e605daad91e69010ea9c3d7077b24865
