@@ -16,8 +16,12 @@ class RestaurantTableViewController: UITableViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    var restaurantIsVisited = Array(repeating: false, count: 21)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // iPad上自动调整单元格宽度
+        tableView.cellLayoutMarginsFollowReadableWidth = true
     }
 
     // MARK: - Table view data source
@@ -44,9 +48,61 @@ class RestaurantTableViewController: UITableViewController {
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         cell.thumbnilImageView.image = UIImage(named: restaurantNames[indexPath.row])
         
+        // if restaurantIsVisited[indexPath.row] {
+        //  cell.accessoryType = .checkmark
+        // }else {
+        //   cell.accessoryType = .none
+        // }
+        // 三元运算符
+        // cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
+        cell.heartImageView.isHidden = restaurantIsVisited[indexPath.row] ? false : true
+        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let optionMenu = UIAlertController(title: nil, message: "What do you want to do ?", preferredStyle: .actionSheet)
+        
+        // 对于iPad上点击单元格处理（没有的话在iPad上会崩溃）
+        if let popoverController = optionMenu.popoverPresentationController {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                popoverController.sourceView = cell
+                popoverController.sourceRect = cell.bounds
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        optionMenu.addAction(cancelAction)
+        
+        let callActionHandler = {(action: UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retrylater.", preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessage, animated: true, completion: nil)
+        }
+        
+        let callAction = UIAlertAction(title: "Call" + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+        optionMenu.addAction(callAction)
+        
+        let checkActionTitle = (restaurantIsVisited[indexPath.row]) ? "Undo Check in" : "Check in"
+        
+        let checkInAction = UIAlertAction(title: checkActionTitle, style: .default, handler: {
+            (action: UIAlertAction!) -> Void in
+            
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
+            self.restaurantIsVisited[indexPath.row] = (self.restaurantIsVisited[indexPath.row] ? false : true)
+            cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
+            
+            // cell?.accessoryType = .checkmark
+            // self.restaurantIsVisited[indexPath.row] = true
+        })
+        optionMenu.addAction(checkInAction)
+        
+        present(optionMenu, animated: true, completion: nil)
+        
+        // 取消选中行状态
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 
     /*
     // Override to support conditional editing of the table view.

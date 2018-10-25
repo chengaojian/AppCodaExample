@@ -19,6 +19,8 @@ class RestaurantTableViewCell: UITableViewCell {
             thumbnilImageView.clipsToBounds = true
         }
     }
+    // 心形收藏
+    @IBOutlet var heartImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
