@@ -19,3 +19,7 @@ Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 - **SimpleTable**
 
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/SimpleTable.png)
+
+- **FoodPin**
+
+![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/FoodPin.png)
