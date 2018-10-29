@@ -27,3 +27,8 @@ Swift学习记录，持续更新… （Swift4.2+Xcode10+iOS12）
 - **FoodPin2**
 
 ![image](https://github.com/chengaojian/AppCodaExample/blob/master/png/FoodPin2.png)
+
+
+- **FoodPinTableDeletion**
+
+![image](https://github.com/chengaojian/AppCodaExample/blob/master/gif/FoodPinTableDeletion.gif)
