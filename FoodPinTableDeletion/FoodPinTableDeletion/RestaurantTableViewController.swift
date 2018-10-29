@@ -123,6 +123,9 @@ class RestaurantTableViewController: UITableViewController {
         tickAction.backgroundColor = UIColor(red: 24.0/255.0, green: 162.0/255.0, blue: 86.0/255.0, alpha: 1)
         tickAction.image = UIImage(named: "tick")
         
+        // 根据单元格选中未选中来判断左滑图标
+        tickAction.image = self.restaurantIsVisited[indexPath.row] ? UIImage(named: "undo") : UIImage(named: "tick")
+        
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [tickAction])
         return swipeConfiguration
     }
