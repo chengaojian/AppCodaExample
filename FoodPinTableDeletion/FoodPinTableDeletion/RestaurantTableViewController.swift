@@ -53,6 +53,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /* 此处为单元格点击事件，由于与页面跳转事件冲突，固暂时注释
         let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
         self.restaurantIsVisited[indexPath.row] = self.restaurantIsVisited[indexPath.row] ? false : true
         cell.heartImageView.isHidden = self.restaurantIsVisited[indexPath.row] ? false : true
@@ -67,6 +68,7 @@ class RestaurantTableViewController: UITableViewController {
         present(alterController, animated: true, completion: {
             print("-----")
         })
+        */
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -131,6 +133,20 @@ class RestaurantTableViewController: UITableViewController {
         return swipeConfiguration
     }
     
+    // 界面跳转传值(图片名称以及图片)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantImageName = restaurantImages[indexPath.row]
+                destinationController.name = restaurantNames[indexPath.row]
+                destinationController.type = restaurantTypes[indexPath.row]
+                destinationController.location = restaurantLocations[indexPath.row]
+            }
+        }
+    }
+    
+    
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     
         /*
@@ -152,4 +168,7 @@ class RestaurantTableViewController: UITableViewController {
          }
          */
 //    }
+    
 }
+
+
