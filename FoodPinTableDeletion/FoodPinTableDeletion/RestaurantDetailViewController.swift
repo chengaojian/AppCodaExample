@@ -9,7 +9,6 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
-
     @IBOutlet var restaurantImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
